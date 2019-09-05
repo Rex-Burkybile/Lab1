@@ -5,6 +5,7 @@
  */
 package hw.lab1;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -31,9 +32,10 @@ public class SalesTax {
         float totalSalesTax = countrySalesTax + stateSalesTax;
         float totalOfSale = purchasePriceAsFloat + totalSalesTax;
         
-        System.out.println("The amount before tax is " + purchasePriceAsFloat + " the state tax is " + 
-               stateSalesTax + " the country sales tax is " + countrySalesTax + " the total sales tax is " 
-        + totalSalesTax + " the total price of sale is " + totalOfSale);
+        NumberFormat money = NumberFormat.getCurrencyInstance();
+        System.out.println("The amount before tax is " + money.format (purchasePriceAsFloat) + " the state tax is " + 
+               money.format (stateSalesTax) + " the country sales tax is " + money.format (countrySalesTax) + " the total sales tax is " 
+        + money.format (totalSalesTax) + " the total price of sale is " + money.format (totalOfSale));
         
     }
 }
